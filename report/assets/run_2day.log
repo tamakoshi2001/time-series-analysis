@@ -1,0 +1,55 @@
+findfont: Failed to find font weight normal, now using 500.
+findfont: Failed to find font weight normal, now using 500.
+findfont: Failed to find font weight normal, now using 500.
+findfont: Failed to find font weight normal, now using 500.
+Japanese font: YuGothic /System/Library/AssetsV2/com_apple_MobileAsset_Font8/ee89e7987a76cc8cfdff36c96bd7bc77655b343e.asset/AssetData/YuGothic-Medium.otf
+loaded: 2016-04-01 00:00:00 -> 2026-03-31 23:00:00 n= 87648
+test week: 2026-03-25 -> 2026-03-31  first origin: 2026-03-23 23:00:00
+== stationarity ==
+stationarity done
+== ARMA / ARMAX on 364-day diff ==
+  fitted ARMA(1, 0) aic= 191778.4
+  fitted ARMA(2, 0) aic= 183814.7
+  fitted ARMA(1, 1) aic= 185255.3
+  fitted ARMA(2, 1) aic= 183659.1
+  fitted ARMA(2, 2) aic= 183646.1
+best ARMA: ARMA(2, 2)
+  fitted ARMAX(1, 0) aic= 191780.8
+  fitted ARMAX(2, 0) aic= 183817.4
+  fitted ARMAX(1, 1) aic= 185259.2
+  fitted ARMAX(2, 1) aic= 183662.3
+  fitted ARMAX(2, 2) aic= 185350.6
+best ARMAX: ARMAX(2, 1)
+ARMA rolling done
+ARMAX rolling done
+closeness: {
+ "ARMA_diff364d": {
+  "mean_abs_diff_10k_kw": 32.28523943934057,
+  "max_abs_diff_10k_kw": 62.79968882128833,
+  "mean_abs_diff_pct_of_demand": 1.1517270268717361,
+  "corr_with_lastyear": 0.9990342781130319
+ },
+ "ARMAX_rain_holiday": {
+  "mean_abs_diff_10k_kw": 30.403841087815106,
+  "max_abs_diff_10k_kw": 58.97461424972198,
+  "mean_abs_diff_pct_of_demand": 1.0846109897168923,
+  "corr_with_lastyear": 0.9991845769605844
+ }
+}
+== seasonal profile ==
+  fitted residual ARIMA(1, 1, 1) aic= 190489.9
+  fitted residual ARIMA(2, 1, 1) aic= 189119.5
+  fitted residual ARIMA(2, 1, 2) aic= 188567.7
+best residual ARIMA: ARIMA(2, 1, 2)
+seasonal profile done
+== state space (Kalman filter) ==
+state space fitted. aic= 193840.1
+state space rolling done
+== ranking ==
+  seasonal_profile_plus_ARIMA      rmse=  200.3 mape=6.19%
+  state_space_kalman               rmse=  230.0 mape=7.19%
+  naive_2day                       rmse=  403.7 mape=11.65%
+  ARMA_diff364d                    rmse=  496.3 mape=14.61%
+  ARMAX_rain_holiday               rmse=  497.5 mape=14.65%
+SAVED /Users/yuji/Documents/tepco_electricity/report_assets/results_2day.json
+best: {'model': 'seasonal_profile_plus_ARIMA', 'n': 168, 'rmse': 200.3433972416787, 'mae': 170.00971600972224, 'mape_percent': 6.190928339409144}

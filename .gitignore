@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Claude Code local settings
+.claude/
+
+# データは再配布権が不明なためリポジトリに含めない(取得方法はREADME参照)
+data/
+
+# LaTeX build artifacts
+report/*.aux
+report/*.fdb_latexmk
+report/*.fls
+report/*.log
+report/*.out
+report/*.synctex.gz
+report/*.toc
+
+# macOS
+.DS_Store
