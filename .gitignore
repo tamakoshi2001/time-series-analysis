@@ -15,6 +15,9 @@ wheels/
 # データは再配布権が不明なためリポジトリに含めない(取得方法はREADME参照)
 data/
 
+# データ生成スクリプトもローカル専用(公開しない)
+scripts/build_dataset.py
+
 # LaTeX build artifacts
 report/*.aux
 report/*.fdb_latexmk
