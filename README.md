@@ -24,7 +24,7 @@ data/
     holiday/       内閣府の祝日CSV
   processed/
     combined_hourly_demand_labeled.csv  気象・祝日ラベル付き(分析の入力)
-scripts/           ラベル付与・分析スクリプト
+scripts/           データセット生成・分析スクリプト
 report/            レポートのLaTeXソースとPDF
   assets/          分析の出力(図・results_2day.json・実行ログ)
 docs/              試問対策メモなど
@@ -34,8 +34,16 @@ docs/              試問対策メモなど
 
 分析の入力は `data/processed/combined_hourly_demand_labeled.csv`。
 data/raw/ の生データ(juyo実績 2016-04〜2022-03 + でんき予報日別CSV 2022-04〜)を
-時別に結合し、東京の気象(Open-Meteo)と祝日(内閣府)のラベルを付与したもの
-(ラベル付与の処理は `scripts/add_tokyo_weather_holiday_labels.py` を参照)。
+時別に結合し、東京の気象(Open-Meteo)と祝日(内閣府)のラベルを付与したもの。
+
+生データから一括再生成できる:
+
+```bash
+uv run python scripts/build_dataset.py
+```
+
+気象・祝日は data/raw/ に保存済みの生データがあればそれを使い(オフライン可)、
+無ければAPIから取得して保存する。
 
 ※ `data/` は再配布権の観点からリポジトリに含めていない。
 生データの入手元は東京電力パワーグリッド「でんき予報」の過去実績ダウンロード
